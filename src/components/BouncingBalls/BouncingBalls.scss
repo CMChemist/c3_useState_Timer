@@ -1,14 +1,9 @@
 .ballContainer {
-    // display: flex;
-    // justify-content: space-evenly;
     width: 300px;
     height: 300px;
     border: 3px solid black;
     border-radius: 15px;
 }
-// .ball {
-//     animation-name: ballMovement;
-// }
 
 @mixin ballAttributes ($color, $duration) {
     background-color: $color;
