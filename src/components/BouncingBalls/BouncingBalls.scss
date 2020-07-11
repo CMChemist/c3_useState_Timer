@@ -1,0 +1,52 @@
+.ballContainer {
+    // display: flex;
+    // justify-content: space-evenly;
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+// .ball {
+//     animation-name: ballMovement;
+// }
+
+@mixin ballAttributes ($color, $duration) {
+    background-color: $color;
+    animation-duration: $duration;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+  
+#ball_1 {
+    position: absolute;
+    // top: 10px;
+    left: 34%;
+    @include ballAttributes(red, .5s);
+}
+
+#ball_2 {
+    position: absolute;
+    // top: 10px;
+    left: 47%;
+    @include ballAttributes(green, 0.75s);
+}
+
+#ball_3 {
+    position: absolute;
+    // top: 10px;
+    left: 60%;
+    @include ballAttributes(blue, 0.6s);
+}
+
+@keyframes ballMovement {
+    0% {
+        top: 25px;
+    }
+    100% {
+        top: 275px;
+    }
+}

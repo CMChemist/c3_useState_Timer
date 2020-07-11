@@ -1,7 +1,8 @@
 // importing useState
 import React, { useState } from "react";
+import './Counter.scss';
 
-const ReferenceComponent = () => {
+const Counter= (props) => {
   // when component renders for first time
   const initialValue = 0;
 
@@ -12,16 +13,17 @@ const ReferenceComponent = () => {
 
   // component render
   return (
-    <div>
+    <div className="counterContainer">
       {/* lets display our state in a p tag */}
       <p>{stateValue}</p>
 
       {/* lets provide a button to update our state */}
       <button onClick={() => stateUpdater(previousState => previousState + 1)}>
-        Update State
+        Count
       </button>
+      <button onClick={() => props.handleClickStart()} >Start Game</button>
     </div>
   );
 };
 
-export default ReferenceComponent;
+export default Counter;

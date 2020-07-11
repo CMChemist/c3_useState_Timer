@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import ReferenceComponent from './components/ReferenceComponent';
+import Counter from './components/Counter/Counter';
+import BouncingBalls from './components/BouncingBalls/BouncingBalls';
 
 function App() {
+  const [ move, setMove ] = useState(false);
+
+  const handleClickStart = () => {
+    setMove(move => !move);
+  }
+
   return (
     <div className="App">
-      <ReferenceComponent />
+      <BouncingBalls className="ballContainer" move={move}/>
+      <Counter className="counter" handleClickStart={handleClickStart}/>
     </div>
   );
 }
